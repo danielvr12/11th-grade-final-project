@@ -14,8 +14,8 @@ model.add(DLLayer("Layer 3",  256, (512,), activation="tanh", W_initialization="
 model.add(DLLayer("Layer 4",  4, (256,), activation="trim_softmax", W_initialization="He", learning_rate=0.02, random_scale=0.01))
 model.compile("categorical_cross_entropy")
 
-activations = ["relu", "relu", "tanh", "trim_softmax"]  # Activations of the layers in the same order as you defined the model
-loss_function = "categorical_cross_entropy"  # Loss function used during training
+activations = ["relu", "relu", "tanh", "trim_softmax"] 
+loss_function = "categorical_cross_entropy" 
 model.load_weights("saved_weights 80.53%", activations, loss_function)
 
 def prepare_image(file_path, image_size=(32, 32)):
